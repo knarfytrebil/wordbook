@@ -1,25 +1,79 @@
+/*Alternative Fonts*/
+@font-face {
+  font-family: "ScholarPaper";
+  src: url(fonts/PWScolarpaper.ttf) format("truetype");
+}
+@font-face {
+  font-family: "zhanku";
+  src: url(fonts/zhanku.ttf) format("truetype");
+}
+@font-face {
+  font-family: "kiwi";
+  src: url(fonts/kiwi.ttf) format("truetype");
+}
+@font-face {
+  font-family: "kingthings";
+  src: url(fonts/kingthings.ttf) format("truetype");
+}
+
+/*Body*/
 body {
     height:100vh;
     margin:0px;
 }
+
+/*CSS For the Deck*/
 .deck {
     height:100%;
     width:100%;
     background-color:gray;
+    background: url(img/bg-1.jpg);
 }
+
+/*The Card*/
 .card {
     width: 92.5%;
-    top: 2.5vh;
     left: 3.75vw;
-    height: 95%;
-    border-radius: 15px;
-    border: 1px solid gray;
+    height: 45%;
     display: inline-block;
     position: absolute;
-    box-shadow: 1px 1px 1px black;
     text-align: center;
     font-family: sans-serif;
     font-size: 3rem;
     vertical-align: middle;
-    background-color: #eee;
+    background-color: rgba(255,255,255,.8);
+    line-height: 45vh;
+    background: url(img/card-texture-1.png);
+}
+
+/*Single Unknwon Word*/
+.card .vocabulary {
+    color:#333333;
+    font-family: "kingthings", sans-serif !important;
+}
+
+/*Meaning of the Unknown Word*/
+.card .meaning {
+    color:#333333;
+    font-family: "zhanku", sans-serif !important;
+    font-size: 1.4rem;
+    padding: 10vw;
+    display: inline-block;
+    line-height: 1.5rem;
+    text-align: center;  
+}
+
+/*The Card Bottom*/
+.card.bottom{
+    box-shadow: 1px 2px 5px 0px gray;
+    border-radius: 0 0 2vh 2vh;
+    bottom: 5vh;
+    border-top: 1px dashed gray;
+}
+
+/*The Card Top*/
+.card.top{
+    box-shadow: 1px 1px 5px gray;
+    border-radius: 2vh 2vh 0px 0px;
+    top: 5vh;
 }
