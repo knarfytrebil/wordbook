@@ -1,4 +1,4 @@
-/*Alternative Fonts*/
+`/*Alternative Fonts*/
 @font-face {
   font-family: "ScholarPaper";
   src: url(fonts/PWScolarpaper.ttf) format("truetype");
@@ -30,6 +30,13 @@ body {
     background: url(img/bg-1.jpg);
 }
 
+.shadow {
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
 /*The Card*/
 .card {
     width: 92.5%;
@@ -41,9 +48,15 @@ body {
     font-family: sans-serif;
     font-size: 3rem;
     vertical-align: middle;
-    background-color: rgba(255,255,255,.8);
     line-height: 45vh;
+}
+
+.deck .card {
     background: url(img/card-texture-1.png);
+}
+
+.shadow .card {
+    background-color:black;
 }
 
 /*Single Unknwon Word*/
@@ -64,16 +77,36 @@ body {
 }
 
 /*The Card Bottom*/
-.card.bottom{
-    box-shadow: 1px 2px 5px 0px gray;
+.deck .card.bottom {
+    z-index: 3;
+    transform: rotateX(0deg);
+    transform-origin: 0 0;
     border-radius: 0 0 2vh 2vh;
     bottom: 5vh;
     border-top: 1px dashed gray;
 }
 
 /*The Card Top*/
-.card.top{
-    box-shadow: 1px 1px 5px gray;
+.deck .card.top {
+    z-index: 3;
+    transform: rotateX(0deg);
+    transform-origin: 100% 100%;
     border-radius: 2vh 2vh 0px 0px;
     top: 5vh;
+}
+
+/*Shadow for Card at the Bottom*/
+.shadow .card.bottom {
+    bottom: 5vh;
+    z-index:0;
+    box-shadow: 1px 2px 5px 0px gray;
+    border-radius: 0 0 2vh 2vh;
+}
+
+/*Shadow for Card at the Top*/
+.shadow .card.top {
+    top: 5vh;
+    z-index:0;
+    border-radius: 2vh 2vh 0px 0px;
+    box-shadow: 1px 1px 5px gray;
 }
