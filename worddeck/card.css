@@ -1,19 +1,57 @@
-`/*Alternative Fonts*/
+/*Disable Select*/
+div {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* IE/Edge */
+}
+
+/*Alternative Fonts*/
 @font-face {
-  font-family: "ScholarPaper";
-  src: url(fonts/PWScolarpaper.ttf) format("truetype");
+    font-family: "ScholarPaper";
+    src: url(fonts/PWScolarpaper.ttf) format("truetype");
 }
 @font-face {
-  font-family: "zhanku";
-  src: url(fonts/zhanku.ttf) format("truetype");
+    font-family: "zhanku";
+    src: url(fonts/zhanku.ttf) format("truetype");
 }
 @font-face {
-  font-family: "kiwi";
-  src: url(fonts/kiwi.ttf) format("truetype");
+    font-family: "kiwi";
+    src: url(fonts/kiwi.ttf) format("truetype");
 }
 @font-face {
-  font-family: "kingthings";
-  src: url(fonts/kingthings.ttf) format("truetype");
+    font-family: "kingthings";
+    src: url(fonts/kingthings.ttf) format("truetype");
+}
+
+/*KeyFrame Animations*/
+/*Animation to restore card brightness & contrast*/
+@keyframes card_restore {
+    0%   {
+        filter: brightness(0.6);
+        filter: contrast(0.6);
+        -webkit-filter: brightness(0.6);
+        -webkit-filter: contrast(0.6);
+    }
+    100% {
+        filter: brightness(1);
+        filter: contrast(1);
+        -webkit-filter: brightness(1);
+        -webkit-filter: contrast(1);
+    }
+}
+
+/*Animation Execution Class */
+.deck .card.restore-progress {
+    animation-name: card_restore;
+    animation-duration: 500ms;
+}
+.deck .card.retored {
+    filter: brightness(1);
+    filter: contrast(1);
+    -webkit-filter: brightness(1);
+    -webkit-filter: contrast(1);   
 }
 
 /*Body*/
@@ -21,6 +59,7 @@ body {
     height:100vh;
     margin:0px;
 }
+
 
 /*CSS For the Deck*/
 .deck {
